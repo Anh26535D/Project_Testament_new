@@ -1,4 +1,8 @@
-const {ethers, Wallet, Contract, providers, BigNumber} = require("ethers");
+require(['ethers'], function(ethers){
+    const Wallet = ethers.Wallet;
+    const Contract = ethers.Contract;
+    const providers = ethers.providers;
+    // const {ethers, Wallet, Contract, providers} = require("ethers");
 //Read abi and address of contract
 const contractInfo = require("./transferCryptoTestament.json");
 let contractABI = contractInfo.abi;
@@ -26,6 +30,16 @@ async function main(){
 }
 
 main();
+
+//Get the mount
+function printBeneficiary(){
+    let addrr = document.getElementById("formAddressBeneficiary").value;
+    let percent = document.getElementById("formPercent").value;
+    alert("The owner of this testament is: " + " with the new benef has been added: " + addrr + " and percent: " + percent);
+}
+
+});
+
 
 
 
